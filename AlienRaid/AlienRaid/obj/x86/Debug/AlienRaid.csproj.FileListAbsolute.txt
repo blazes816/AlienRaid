@@ -1,0 +1,16 @@
+C:\Temp\Games\AlienRaid\AlienRaid\AlienRaid\bin\x86\Debug\Content\Images\ship.xnb
+C:\Temp\Games\AlienRaid\AlienRaid\AlienRaid\bin\x86\Debug\AlienRaid.exe
+C:\Temp\Games\AlienRaid\AlienRaid\AlienRaid\bin\x86\Debug\AlienRaid.pdb
+C:\Temp\Games\AlienRaid\AlienRaid\AlienRaid\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Temp\Games\AlienRaid\AlienRaid\AlienRaid\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Temp\Games\AlienRaid\AlienRaid\AlienRaid\obj\x86\Debug\AlienRaid.exe
+C:\Temp\Games\AlienRaid\AlienRaid\AlienRaid\obj\x86\Debug\AlienRaid.pdb
+C:\Temp\Games\AlienRaid\AlienRaid\AlienRaid\bin\x86\Debug\Content\Images\star.xnb
+C:\Users\Tyler\Projects\AlienRaid\AlienRaid\AlienRaid\bin\x86\Debug\Content\Images\ship.xnb
+C:\Users\Tyler\Projects\AlienRaid\AlienRaid\AlienRaid\bin\x86\Debug\Content\Images\star.xnb
+C:\Users\Tyler\Projects\AlienRaid\AlienRaid\AlienRaid\bin\x86\Debug\AlienRaid.exe
+C:\Users\Tyler\Projects\AlienRaid\AlienRaid\AlienRaid\bin\x86\Debug\AlienRaid.pdb
+C:\Users\Tyler\Projects\AlienRaid\AlienRaid\AlienRaid\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Tyler\Projects\AlienRaid\AlienRaid\AlienRaid\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Tyler\Projects\AlienRaid\AlienRaid\AlienRaid\obj\x86\Debug\AlienRaid.exe
+C:\Users\Tyler\Projects\AlienRaid\AlienRaid\AlienRaid\obj\x86\Debug\AlienRaid.pdb

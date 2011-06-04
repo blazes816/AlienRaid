@@ -1,0 +1,2 @@
+c:\temp\Games\AlienRaid\AlienRaid\AlienRaidContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Tyler\Projects\AlienRaid\AlienRaid\AlienRaidContent\obj\x86\Debug\ResolveAssemblyReference.cache
