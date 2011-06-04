@@ -1,0 +1,3 @@
+[submodule "AlienRaid/AlienRaid/Xanx"]
+	path = AlienRaid/AlienRaid/Xanx
+	url = git@github.com:blazes816/Xanx.git
