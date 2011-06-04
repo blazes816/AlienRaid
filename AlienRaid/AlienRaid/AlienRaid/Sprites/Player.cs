@@ -11,19 +11,43 @@ namespace AlienRaid.Sprites
     class Player : Sprite
     {
         private Vector2 strafeVelocity;
+        private TimeSpan lastFire = new TimeSpan(0,0,0);
 
         // Constructor inheriting from parent. 
         public Player(int x, int y, string filename) : base(x, y, filename)
         {
+            
+        }
+
+        protected override void Load()
+        {
+            base.Load();
         }
 
         public override void Update()
         {
+            // Handle strafing
             if (Parent.keyboardState.IsKeyDown(Keys.Right))
                 this.Position += strafeVelocity;
             else if (Parent.keyboardState.IsKeyDown(Keys.Left))
                 this.Position -= strafeVelocity;
 
+            // Handle missile firing
+            TimeSpan t = (Parent.engine.GameTime.TotalGameTime - lastFire);
+            TimeSpan a = new TimeSpan(0, 0, 10);
+
+            if (Parent.keyboardState.IsKeyDown(Keys.Space)
+                &&
+                (
+                    (Parent.gameTime.TotalGameTime - lastFire) > new TimeSpan(0,0,10)
+                
+                || 
+                lastFire.Equals(new TimeSpan(0,0,0))
+                )
+                )
+                fireMissile();
+
+            // Handle bounds checking
             if (this.Position.X < 0) this.Position = new Vector2(0, this.Position.Y);
             else if (this.Position.X > Parent.windowWidth - this.Width)
                 this.Position = new Vector2(Parent.windowWidth - this.Width, this.Position.Y);
@@ -38,9 +62,14 @@ namespace AlienRaid.Sprites
             Parent.Engine.SpriteBatch.End();
         }
 
+        public void fireMissile()
+        {
+            Screens.Play sc = (Screens.Play)Parent;
+            sc.fireMissile();
+            lastFire = Parent.engine.GameTime.TotalGameTime;
+        }
+
         #region Getters & Setters
-
-
         public Vector2 StrafeVelocity
         {
             get { return strafeVelocity; }

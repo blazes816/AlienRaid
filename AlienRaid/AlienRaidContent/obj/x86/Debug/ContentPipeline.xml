@@ -19,6 +19,15 @@
       <Output>C:\Users\Tyler\Projects\AlienRaid\AlienRaid\AlienRaid\bin\x86\Debug\Content\Images\star.xnb</Output>
       <Time>2010-11-06T00:31:04-07:00</Time>
     </Item>
+    <Item>
+      <Source>Images\missile.png</Source>
+      <Name>Images\missile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tyler\Projects\AlienRaid\AlienRaid\AlienRaid\bin\x86\Debug\Content\Images\missile.xnb</Output>
+      <Time>2011-06-03T19:30:24.0175316-07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

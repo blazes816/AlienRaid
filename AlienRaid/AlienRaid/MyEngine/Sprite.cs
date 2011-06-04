@@ -21,6 +21,12 @@ namespace MyEngine
             this.filename = filename;
         }
 
+        public Sprite(Vector2 position, string filename)
+        {
+            this.position = position;
+            this.filename = filename;
+        }
+
         protected override void Load()
         {
             spriteTexture = Parent.Engine.Content.Load<Texture2D>(filename);

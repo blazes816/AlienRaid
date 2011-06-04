@@ -54,19 +54,7 @@ namespace AlienRaid {
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-            /* TODO: move to screen
-			KeyboardState ks = Keyboard.GetState();
-			if(ks.IsKeyDown(Keys.Escape))
-				Exit();
-			if(ks.IsKeyDown(Keys.Right))
-				_pos.X += 5;
-			else if(ks.IsKeyDown(Keys.Left))
-				_pos.X -= 5;
 
-			if(_pos.X < 0) _pos.X = 0;
-			else if(_pos.X > Window.ClientBounds.Width - _playerShip.Width * 2)
-				_pos.X = Window.ClientBounds.Width - _playerShip.Width * 2;
-            */
 			base.Update(gameTime);
             engine.Update(gameTime);
 		}

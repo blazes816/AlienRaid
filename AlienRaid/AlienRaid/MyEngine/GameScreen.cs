@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
 namespace MyEngine
@@ -11,6 +12,7 @@ namespace MyEngine
         public KeyboardState lastKeyboardState;
         public int windowWidth;
         public int windowHeight;
+        public GameTime gameTime;
 
         List<Component> components = new List<Component>();
 
@@ -50,6 +52,7 @@ namespace MyEngine
             this.windowHeight = height;
 
             this.keyboardState = this.lastKeyboardState = Keyboard.GetState();
+            this.gameTime = new GameTime();
         }
 
         public void LoadGameScreen()
@@ -116,6 +119,7 @@ namespace MyEngine
 
         public virtual void Update()
         {
+            this.gameTime = new GameTime();
             // Copy the list of components so the game won't crash if the original
             // is modified while updating
             List<Component> updating = new List<Component>();
