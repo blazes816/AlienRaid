@@ -7,50 +7,52 @@ using AlienRaid.Sprites;
 
 namespace AlienRaid.Screens
 {
-	public class Background : GameScreen
+    public class Background : GameScreen
     {
-		Star[] _stars = new Star[128];
-		Random _rnd = new Random();
+        private Star[] stars;
+        Random random = new Random();
 
-        private int width;
-        private int height;
-
-		public Background(int width, int height)
+        public Background(int width, int height)
+            : base(width, height)
         {
-            // Window size
-            this.width = width;
-            this.height = height;
-		}
+
+        }
 
         // Setup the background
-		protected override void Load() {
-			for(int i = 0; i < _stars.Length; i++) {
-				Star star = new Star(_rnd.Next(this.width), _rnd.Next(this.height), "Content/Images/star");
-				star.Color = new Color(_rnd.Next(256), _rnd.Next(256), _rnd.Next(256), 128);
-				star.Velocity = new Vector2(0, (float)_rnd.NextDouble() * 5 + 2);
-				_stars[i] = star;
+        protected override void Load()
+        {
+            stars = new Star[128];
+
+            for (int i = 0; i < stars.Length; i++)
+            {
+                Star star = new Star(0, 0, "Content/Images/star");
+                star.Position = new Vector2(random.Next(this.windowWidth), random.Next(this.windowHeight));
+                star.Color = new Color(random.Next(256), random.Next(256), random.Next(256), 128);
+                star.Velocity = new Vector2(0, (float)random.NextDouble() * 5 + 2);
                 AddComponent(star);
-			}
-		}
+                stars[i] = star;
+            }
+
+            base.Load();
+        }
 
         public override void Update()
         {
-			for(int i = 0; i < _stars.Length; i++) {
-				var star = _stars[i];
-				if((star.Position += star.Velocity).Y > this.height) {
-					// "generate" a new star
-					star.Position = new Vector2(_rnd.Next(this.width), -_rnd.Next(20));
-                    star.Velocity = new Vector2(0, (float)_rnd.NextDouble() * 5 + 2);
-					star.Color = new Color(_rnd.Next(256), _rnd.Next(256), _rnd.Next(256), 128);
-				}
-			}
+            for (int i = 0; i < stars.Length; i++)
+            {
+                if ((stars[i].Position += stars[i].Velocity).Y > this.windowHeight)
+                {
+                    stars[i].Position = new Vector2(random.Next(this.windowWidth), random.Next(this.windowHeight + 200));
+                    stars[i].Color = new Color(random.Next(256), random.Next(256), random.Next(256), 128);
+                    stars[i].Velocity = new Vector2(0, (float)random.NextDouble() * 5 + 2);
+                }
+            }
+            base.Update();
+        }
 
-			base.Update();
-		}
-
-		public override void Draw()
+        public override void Draw()
         {
-			base.Draw();
-		}
-	}
+            base.Draw();
+        }
+    }
 }

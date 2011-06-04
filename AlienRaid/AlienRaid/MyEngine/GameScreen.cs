@@ -1,10 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using Microsoft.Xna.Framework.Input;
+
 namespace MyEngine
 {
     public class GameScreen
     {
+        public KeyboardState keyboardState;
+        public KeyboardState lastKeyboardState;
+        public int windowWidth;
+        public int windowHeight;
+
         List<Component> components = new List<Component>();
 
         // Set to internal so Engine can access it without allowing
@@ -36,9 +43,13 @@ namespace MyEngine
             }
         }
 
-        public GameScreen()
+        public GameScreen(int width, int height)
         {
+            // Window size
+            this.windowWidth = width;
+            this.windowHeight = height;
 
+            this.keyboardState = this.lastKeyboardState = Keyboard.GetState();
         }
 
         public void LoadGameScreen()

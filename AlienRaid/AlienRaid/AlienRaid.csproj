@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlienRaid\HUD.cs" />
+    <Compile Include="AlienRaid\Sprites\Player.cs" />
     <Compile Include="AlienRaid\Sprites\Star.cs" />
     <Compile Include="MyEngine\Component.cs" />
     <Compile Include="MyEngine\Engine.cs" />

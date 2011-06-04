@@ -9,19 +9,11 @@ namespace MyEngine
 {
     class Sprite : Component
     {
-        public Texture2D spriteTexture;
-        string filename;
+        private Texture2D spriteTexture;
+        private string filename;
 
-        Vector2 position = Vector2.Zero;
-
-        public Vector2 Position 
-        { 
-            get { return position; }
-            set { position = value; }
-        }
-
-        public int Width { get { return spriteTexture.Width; } }
-        public int Height { get { return spriteTexture.Height; } }
+        private Vector2 velocity = Vector2.Zero;
+        private Vector2 position = Vector2.Zero;
 
         public Sprite(float x, float y, string filename)
         {
@@ -41,5 +33,28 @@ namespace MyEngine
             Parent.Engine.SpriteBatch.Draw(spriteTexture, position, Color.White);
             Parent.Engine.SpriteBatch.End();
         }
+
+        #region Getters & Setters
+        public Vector2 Position
+        {
+            get { return position; }
+            set { position = value; }
+        }
+
+        public int Width { get { return spriteTexture.Width; } }
+        public int Height { get { return spriteTexture.Height; } }
+
+        public Vector2 Velocity
+        {
+            get { return velocity; }
+            set { velocity = value; }
+        }
+
+        public Texture2D SpriteTexture
+        {
+            get { return spriteTexture; }
+            set { spriteTexture = value; }
+        }
+        #endregion
     }
 }
