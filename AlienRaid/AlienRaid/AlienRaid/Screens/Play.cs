@@ -14,6 +14,7 @@ namespace AlienRaid.Screens
         // Player stuff
         private Player player = null;
         private List<Sprite> missiles = new List<Sprite>();
+        private Timer shotTimer;
 
         //private HUD hud;
 
@@ -49,10 +50,21 @@ namespace AlienRaid.Screens
 
         public void fireMissile()
         {
+            // Create the missle sprite and set it's velocity
             Sprite missile = new Sprite(player.Position, "Content/Images/missile");
             missile.Velocity = new Vector2(0, -10);
-            missiles.Add(missile);
+            this.missiles.Add(missile);
+
+            // Create the timer to reset when the player can shoot
+            Func<int> trigger = player.resetCanFire;
+            this.shotTimer = new Timer();
+
+            // Add the components
             AddComponent(missile);
+            AddComponent(shotTimer);
+
+            // Set the timer now that it has access to the engine
+            this.shotTimer.SetTimer(new TimeSpan(0, 0, 5), trigger);
         }
     }
 }

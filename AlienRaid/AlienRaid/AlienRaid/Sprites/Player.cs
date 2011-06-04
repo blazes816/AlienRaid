@@ -12,6 +12,8 @@ namespace AlienRaid.Sprites
     {
         private Vector2 strafeVelocity;
         private TimeSpan lastFire = new TimeSpan(0,0,0);
+        private bool canFire = true;
+        private Timer shootTimer;
 
         // Constructor inheriting from parent. 
         public Player(int x, int y, string filename) : base(x, y, filename)
@@ -33,18 +35,7 @@ namespace AlienRaid.Sprites
                 this.Position -= strafeVelocity;
 
             // Handle missile firing
-            TimeSpan t = (Parent.engine.GameTime.TotalGameTime - lastFire);
-            TimeSpan a = new TimeSpan(0, 0, 10);
-
-            if (Parent.keyboardState.IsKeyDown(Keys.Space)
-                &&
-                (
-                    (Parent.gameTime.TotalGameTime - lastFire) > new TimeSpan(0,0,10)
-                
-                || 
-                lastFire.Equals(new TimeSpan(0,0,0))
-                )
-                )
+            if (Parent.keyboardState.IsKeyDown(Keys.Space) && this.canFire)
                 fireMissile();
 
             // Handle bounds checking
@@ -66,7 +57,14 @@ namespace AlienRaid.Sprites
         {
             Screens.Play sc = (Screens.Play)Parent;
             sc.fireMissile();
-            lastFire = Parent.engine.GameTime.TotalGameTime;
+
+            this.canFire = false;
+        }
+
+        public int resetCanFire()
+        {
+            this.canFire = true;
+            return 0;
         }
 
         #region Getters & Setters

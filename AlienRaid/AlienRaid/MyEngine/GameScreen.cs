@@ -16,6 +16,8 @@ namespace MyEngine
 
         List<Component> components = new List<Component>();
 
+        List<Timer> timers = new List<Timer>();
+
         // Set to internal so Engine can access it without allowing
         // other classes to set engine. Engine must be set through
         // the Engine's PushGameScreen() method so that the stack
@@ -77,6 +79,12 @@ namespace MyEngine
                 Component.Parent = this;
                 Component.LoadComponent();
                 PutComponentInOrder(Component);
+
+                // Store timers so we can delete them when needed
+                if (Component.GetType() == typeof(Timer) && !timers.Contains((Timer)Component))
+                {
+                    timers.Add((Timer)Component);
+                }
             }
         }
 
@@ -129,6 +137,15 @@ namespace MyEngine
 
             foreach (Component c in updating)
                 c.Update();
+
+            // Clean up timers
+            foreach (Timer t in timers)
+                if (t.finished)
+                {
+                    timers.Remove(t);
+                    components.Remove(t);
+                    break;
+                }
         }
 
         public virtual void Draw()

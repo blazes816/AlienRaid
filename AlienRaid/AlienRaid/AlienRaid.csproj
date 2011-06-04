@@ -115,6 +115,7 @@
     <Compile Include="MyEngine\GameScreen.cs" />
     <Compile Include="MyEngine\IEContentManager.cs" />
     <Compile Include="MyEngine\Sprite.cs" />
+    <Compile Include="MyEngine\Timer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="AlienRaidGame.cs" />
