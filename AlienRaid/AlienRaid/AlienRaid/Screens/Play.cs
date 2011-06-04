@@ -66,7 +66,7 @@ namespace AlienRaid.Screens
             AddComponent(shotTimer);
 
             // Set the timer now that it has access to the engine
-            this.shotTimer.SetTimer(new TimeSpan(0, 0, 5), trigger);
+            this.shotTimer.SetTimer(new TimeSpan(0, 0, 0, 0, 500), trigger);
         }
     }
 }
