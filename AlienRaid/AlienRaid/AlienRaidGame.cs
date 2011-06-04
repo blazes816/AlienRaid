@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-using MyEngine;
+using Xanx;
 
 using AlienRaid.Screens;
 
@@ -18,13 +18,6 @@ namespace AlienRaid {
 	public class AlienRaidGame : Microsoft.Xna.Framework.Game {
 		GraphicsDeviceManager graphics;
         Engine engine;
-
-
-        /* Todo: Remove
-		SpriteBatch spriteBatch;
-		Texture2D _playerShip;
-		Vector2 _pos = new Vector2(400, 530);
-        */
 
 		public AlienRaidGame() {
 			graphics = new GraphicsDeviceManager(this);
@@ -61,11 +54,6 @@ namespace AlienRaid {
 
 		protected override void Draw(GameTime gameTime) {
 			GraphicsDevice.Clear(Color.Black);
-            /* TODO: move to screen
-			spriteBatch.Begin();
-			spriteBatch.Draw(_playerShip, _pos, null, Color.White, 0, Vector2.Zero, 2, SpriteEffects.None, 0);
-			spriteBatch.End();
-            */
             engine.Draw(gameTime);
 			base.Draw(gameTime);
 		}

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
-using MyEngine;
+using Xanx;
+using Xanx.Components;
+
 using AlienRaid.Sprites;
 
 namespace AlienRaid.Screens

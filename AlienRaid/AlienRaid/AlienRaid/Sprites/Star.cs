@@ -3,7 +3,8 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-using MyEngine;
+using Xanx;
+using Xanx.Components;
 
 namespace AlienRaid.Sprites
 {
